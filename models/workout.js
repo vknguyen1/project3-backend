@@ -4,15 +4,16 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const workoutSchema = new Schema(
   {
-    name: String,
-    weight: Number,
-    reps: Number,
-    image: { type: String, default: 'test' },
-    url: {
-      type: String,
-    },
-    title: String,
-    createdBy: String,
+    workoutName: String,
+    weight: String,
+    reps: String,
+    type: String,
+    // image: { type: String, default: 'test' },
+    // url: {
+    //   type: String,
+    // },
+    // title: String,
+    // createdBy: String,
   },
   { timestamps: true },
 );

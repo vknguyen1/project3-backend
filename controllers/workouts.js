@@ -13,13 +13,14 @@ router.get('/', async (req, res) => {
 
 // WORKOUT CREATE ROUTE
 router.post('/', async (req, res) => {
-  for (let key in req.body) {
-    if (req.body[key] === '') {
-      delete req.body[key];
-    }
-  }
+  //   for (let key in req.body) {
+  //     if (req.body[key] === '') {
+  //       delete req.body[key];
+  //     }
+  //   }
 
   try {
+    console.log(req.body);
     // send all workouts
     res.json(await Workout.create(req.body));
   } catch (error) {
@@ -38,7 +39,7 @@ router.delete('/:id', async (req, res) => {
 });
 
 // Update
-router.options('/:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
   try {
     res.status(200).json(
       await Workout.findByIdAndUpdate(
